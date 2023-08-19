@@ -1,13 +1,25 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {SiConsul} from 'react-icons/si'
 import {BsPhoneVibrate} from 'react-icons/bs'
 import {BsGlobe} from 'react-icons/bs'
-import logo from '../../assets/logo.ai'
-import {BsGrid3X3GapFill} from 'react-icons/bs'
+import logo from '../../assets/logo.jpg'
+import {CgMenuGridO} from 'react-icons/cg'
 
 const Navbar = () => {
+
+    const [active, setActive] = useState('navBarMenu')
+    const showNavBar = () => {
+        setActive('navBarMenu showNavBar')
+    }
+
+    const removeNavBar = () => {
+        setActive('navBarMenu')
+    }
+
+
+
   return (
-      <div className='navbar flex'>
+      <div className='navBar flex'>
 
         <div className='navBarOne flex'>
             <div>
@@ -15,8 +27,14 @@ const Navbar = () => {
             </div>
 
             <div className='none flex'>
-                <li className='flex'> <BsPhoneVibrate className='icon'/> Support</li>
-                <li className='flex'> <BsGlobe className='icon'/> Languages</li>
+                <li className='flex'>           
+                    <BsPhoneVibrate className='icon'/> 
+                    Support
+                </li>
+                <li className='flex'> 
+                    <BsGlobe className='icon'/> 
+                    Languages
+                </li>
             </div>
 
             <div className='atb flex'>
@@ -27,33 +45,35 @@ const Navbar = () => {
 
         <div className='navBarTwo'>
             <div className='logoDiv'>
-                <img src={logo} className='logo' alt='Air Phantom'></img>
+                <img src={logo} className='Logo' alt='Air Phantom'></img>
             </div>
 
-            <div className='navBarMenu'>
+            <div className={active}>
                 <ul className='menu flex'>
-                    <li className='listItem'>Home</li>
-                    <li className='listItem'>About</li>
-                    <li className='listItem'>Offers</li>
-                    <li className='listItem'>Seats</li>
-                    <li className='listItem'>Destinations</li>
+                    <li onClick={removeNavBar} className='listItem'>Home</li>
+                    <li onClick={removeNavBar} className='listItem'>About</li>
+                    <li onClick={removeNavBar} className='listItem'>Offers</li>
+                    <li onClick={removeNavBar} className='listItem'>Seats</li>
+                    <li onClick={removeNavBar} className='listItem'>Destinations</li>
                 </ul>
 
-                <button className='btn flex btnOne'>
+                <button onClick={removeNavBar} className='btn flex btnOne'>
                     Contact
                 </button>
             </div>
 
-            <div className='toggleIcon'>
-                <BsGrid3X3GapFill/>
-            </div>
 
-            {/* <button className='btn flex btnOne'>
-                    Contact
-                </button> */}
+            <button className='btn flex btnTwo'>
+                Contact
+            </button>
+
+            <div onClick={showNavBar} className='toggleIcon'>
+                <CgMenuGridO className='icon'/>
+            </div>
         </div>
       </div>
   )
 }
 
 export default Navbar
+
