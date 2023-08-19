@@ -65,20 +65,23 @@ li {
 }
 
 .btn {
-  pad: 0.7rem 1.5rem;
+  padding: 0.7rem 1.5rem;
   background-color: var(--primaryColor);
   border: none;
   outline: none;
   border-radius: 3rem;
   cursor: pointer;
   color: var(--whiteColor);
-}
-.btn a {
   color: var(--whiteColor);
   font-weight: 500;
 }
 .btn:hover {
   background-color: var(--HoverColor);
+}
+
+.Logo {
+  width: 15%;
+  height: auto;
 }
 
 img, video {
@@ -117,7 +120,7 @@ h2 {
 }
 .navBar .navBarOne, .navBar .navBarTwo {
   justify-content: space-between;
-  padding: 1px;
+  padding: 1rem;
   width: 100%;
 }
 .navBar .navBarOne {
@@ -157,12 +160,43 @@ h2 {
     padding: 1.5rem;
     border-radius: 10px;
     top: 5rem;
-    right: 50%;
+    right: -50%;
     width: 80%;
     transform: translateX(50%);
     z-index: 2000;
     box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
-    border: 3px solid var(--whiteColor);
+    border: 3px sol id var(--whiteColor);
     transition: 0.4s ease-in-out;
   }
+  .navBar .navBarTwo .navBarMenu .menu {
+    flex-direction: column;
+    gap: 0.5rem;
+    text-align: center;
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem {
+    padding: 0.5rem 0;
+    cursor: pointer;
+    color: var(--blackColor);
+  }
+  .navBar .navBarTwo .navBarMenu .menu .listItem:hover {
+    color: var(--primaryColor);
+    font-weight: 700;
+  }
+  .navBar .navBarTwo .navBarMenu .btnOne {
+    display: block;
+    justify-content: center;
+    margin: auto;
+    margin-top: 1rem;
+  }
+  .navBar .navBarTwo .btnTwo {
+    display: none;
+  }
+}
+.navBar .navBarTwo .toggleIcon .icon {
+  font-size: 30px;
+  color: var(--blackColor);
+}
+.navBar .navBarTwo .showNavbar {
+  right: 50%;
+  transition: 0.5s ease-in-out;
 }/*# sourceMappingURL=main.css.map */
