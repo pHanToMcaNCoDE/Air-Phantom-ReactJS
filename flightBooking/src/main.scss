@@ -70,23 +70,23 @@ li{
 }
 
 .btn{
-    pad: .7rem 1.5rem;
+    padding: .7rem 1.5rem;
     background-color: var(--primaryColor);
     border: none;
     outline: none;
     border-radius: 3rem;
     cursor: pointer;
     color: var(--whiteColor);
-
-    a{
-        color: var(--whiteColor);
-        font-weight: 500;
-    }
+    color: var(--whiteColor);
+    font-weight: 500;
     &:hover{
         background-color: var(--HoverColor);
     }
 }
-
+.Logo{
+    width: 15%;
+    height: auto;
+}
 img, video{
     width: 100%;
     height: auto;
@@ -125,8 +125,8 @@ h2{
 
     .navBarOne, .navBarTwo{
         justify-content: space-between;
-        padding: 1px;
-        width: 100%;
+        padding: 1rem;
+        width: 100%; 
     }
 
     .navBarOne{
@@ -174,16 +174,57 @@ h2{
                 padding: 1.5rem;
                 border-radius: 10px;
                 top: 5rem;
-                right: 50%;
+                right: -50%;
                 width: 80%;
                 transform: translateX(50%);
                 z-index: 2000;
                 box-shadow: rgba(0,0,0,.1) 0px 10px 15px -3px rgba(0,0,0,.05) 0px 4px 6px -2px;
-                border: 3px solid var(--whiteColor);
+                border: 3px sol id var(--whiteColor);
                 transition: .4s ease-in-out;
+
+                .menu{
+                    flex-direction: column;
+                    gap: .5rem;
+                    text-align: center;
+
+                    .listItem{
+                        padding: .5rem 0;
+                        cursor: pointer;
+                        color: var(--blackColor);
+
+                        &:hover{
+                            color: var(--primaryColor);
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .btnOne{
+                    display: block;
+                    justify-content: center;
+                    margin: auto;
+                    margin-top: 1rem;
+                }
             }
+
+            .btnTwo{
+                display: none;
+            }
+        }
+
+        .toggleIcon{
+            .icon{
+                font-size: 30px;
+                color: var(--blackColor);
+            }
+        }
+
+        .showNavbar{
+            right: 50%;
+            transition: .5s ease-in-out;
         }
     }
 }
+
 
 
